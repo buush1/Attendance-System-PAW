@@ -74,6 +74,6 @@ function createDatabaseAndTables($show_messages = false) {
     }
 }
 
-// Auto-create database and tables when this file is included (SILENT mode for Exercise 4-5)
+// Auto-create database and tables when this file is included
 createDatabaseAndTables(false);
 ?>

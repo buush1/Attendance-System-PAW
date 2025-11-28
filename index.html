@@ -9,7 +9,7 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-  <!-- Your jQuery exercises -->
+  <!-- jQuery exercises -->
   <script src="jquery.js"></script>
 
   <!-- Chart.js -->
@@ -17,15 +17,18 @@
 </head>
 
 <body>
-  <!-- YOUR EXISTING HTML CONTENT HERE - KEEP EVERYTHING ELSE THE SAME -->
+  
   <header>
     <h1>Attendance System</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#attendance">Attendance List</a>
-      <a href="#add-student">Add Student</a>
-      <a href="#reports">Reports</a>
-      <a href="#">Logout</a>
+      <a href="index.html">Home</a>        
+      <a href="add_student_db.php">Add Student (db)</a>     
+      <a href="add_student.php">Add Student (jk)</a>        
+      <a href="list_students.php">List Students</a>
+      <a href="take_attendance.php">Take Attendance</a>
+      <a href="create_session.php">Create Session</a>
+      <a href="close_session.php">Close Session</a>
+      <a href="test_connection.php">Database connection</a>
     </nav>
   </header>
 
@@ -34,7 +37,7 @@
     <section id="attendance">
       <h2>Attendance List</h2>
 
-      <!-- SEARCH AND SORT CONTROLS ADDED HERE -->
+      <!-- SEARCH AND SORT CONTROLS  -->
       <div class="search-sort-controls">
         <div class="form-row">
           <label for="search-name">Search by Name:</label>

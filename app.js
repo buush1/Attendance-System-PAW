@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateReport();
   }
 
-  // Checkbox live update
+  // Checkbox 
   const table = document.getElementById("attendance-table");
   table.addEventListener("change", e => {
     if (e.target.matches(".s,.p")) {

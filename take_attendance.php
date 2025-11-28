@@ -19,31 +19,58 @@ if (file_exists($attendance_file)) {
                 padding: 0;
                 min-height: 100vh;
             }
-            .nav-bar {
+            header {
                 background: #722f37;
-                padding: 15px 0;
+                padding: 20px 0;
                 margin-bottom: 20px;
+                text-align: center;
             }
-            .nav-container {
+            header h1 {
+                color: white;
+                margin: 0 0 15px 0;
+                font-size: 28px;
+            }
+            nav {
                 max-width: 1200px;
                 margin: 0 auto;
                 display: flex;
+                justify-content: center;
                 gap: 10px;
                 flex-wrap: wrap;
                 padding: 0 20px;
             }
-            .nav-link {
-                color: white;
-                text-decoration: none;
-                padding: 8px 15px;
-                background: rgba(255,255,255,0.2);
-                border-radius: 6px;
-                font-size: 14px;
-                transition: all 0.3s ease;
-            }
-            .nav-link:hover {
-                background: rgba(255,255,255,0.3);
-            }
+            nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.9);
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
             .message {
                 background: white;
                 padding: 40px;
@@ -54,29 +81,32 @@ if (file_exists($attendance_file)) {
                 max-width: 500px;
                 margin: 50px auto;
             }
-            h1 {
+            .message h1 {
                 color: #dc2626;
                 margin-bottom: 20px;
             }
         </style>
     </head>
     <body>
-        <!-- NAVIGATION BAR -->
-        <div class="nav-bar">
-            <div class="nav-container">
-                <a href="menu.php" class="nav-link">🏠 Menu</a>
-                <a href="add_student.php" class="nav-link">➕ Add Student (JSON)</a>
-                <a href="take_attendance.php" class="nav-link">📝 Take Attendance</a>
-                <a href="add_student_db.php" class="nav-link">➕ Add Student (DB)</a>
-                <a href="list_students.php" class="nav-link">📋 List Students</a>
-                <a href="index.html" class="nav-link">🚀 Main System</a>
-            </div>
-        </div>
+        <header>
+            <h1>Attendance System</h1>
+            <nav>
+                <a href="index.html">Home</a>        
+                <a href="add_student_db.php">Add Student (db)</a>     
+                <a href="add_student.php">Add Student (jk)</a>        
+                <a href="list_students.php">List Students</a>
+                <a href="take_attendance.php">Take Attendance</a>
+                <a href="create_session.php">Create Session</a>
+                <a href="close_session.php">Close Session</a>
+                <a href="test_connection.php">Database Connection</a>
+
+            </nav>
+        </header>
 
         <div class="message">
             <h1>Attendance Already Taken</h1>
             <p>Attendance for today (<?php echo $today; ?>) has already been recorded.</p>
-            <a href="add_student.php" class="nav-link" style="display: inline-block; margin-top: 20px;">Go to Add Students</a>
+            <a href="add_student.php" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #722f37; color: white; text-decoration: none; border-radius: 6px;">Go to Add Students</a>
         </div>
     </body>
     </html>
@@ -117,31 +147,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 0;
             min-height: 100vh;
         }
-        .nav-bar {
+        header {
             background: #722f37;
-            padding: 15px 0;
+            padding: 20px 0;
             margin-bottom: 20px;
+            text-align: center;
         }
-        .nav-container {
+        header h1 {
+            color: white;
+            margin: 0 0 15px 0;
+            font-size: 28px;
+        }
+        nav {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
+            justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
             padding: 0 20px;
         }
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 6px;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-        .nav-link:hover {
-            background: rgba(255,255,255,0.3);
-        }
+        nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.9);
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -151,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0 8px 30px rgba(114, 47, 55, 0.08);
             border: 1px solid #e8c8ce;
         }
-        h1 {
+        .container h1 {
             color: #722f37;
             text-align: center;
             margin-bottom: 30px;
@@ -216,17 +273,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <!-- NAVIGATION BAR -->
-    <div class="nav-bar">
-        <div class="nav-container">
-            <a href="menu.php" class="nav-link">🏠 Menu</a>
-            <a href="add_student.php" class="nav-link">➕ Add Student (JSON)</a>
-            <a href="take_attendance.php" class="nav-link">📝 Take Attendance</a>
-            <a href="add_student_db.php" class="nav-link">➕ Add Student (DB)</a>
-            <a href="list_students.php" class="nav-link">📋 List Students</a>
-            <a href="index.html" class="nav-link">🚀 Main System</a>
-        </div>
-    </div>
+    <header>
+        <h1>Attendance System</h1>
+        <nav>
+            <a href="index.html">Home</a>        
+            <a href="add_student_db.php">Add Student (db)</a>     
+            <a href="add_student.php">Add Student (jk)</a>        
+            <a href="list_students.php">List Students</a>
+            <a href="take_attendance.php">Take Attendance</a>
+            <a href="create_session.php">Create Session</a>
+            <a href="close_session.php">Close Session</a>
+            <a href="test_connection.php">Database Connection</a>
+        </nav>
+    </header>
 
     <div class="container">
         <h1>Take Attendance for <?php echo $today; ?></h1>
@@ -238,7 +297,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php if (empty($students)): ?>
             <div class="empty-state">
                 <p>No students found. Please add students first.</p>
-                <a href="add_student.php" class="nav-link" style="display: inline-block; margin-top: 10px;">Go to Add Students</a>
+                <a href="add_student.php" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #722f37; color: white; text-decoration: none; border-radius: 6px;">Go to Add Students</a>
             </div>
         <?php else: ?>
             <form method="POST">

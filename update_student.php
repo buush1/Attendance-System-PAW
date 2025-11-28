@@ -156,16 +156,19 @@ if (!$student) {
 </head>
 <body>
     <!-- NAVIGATION BAR -->
-    <div class="nav-bar">
-        <div class="nav-container">
-            <a href="menu.php" class="nav-link">🏠 Menu</a>
-            <a href="add_student.php" class="nav-link">➕ Add Student (JSON)</a>
-            <a href="take_attendance.php" class="nav-link">📝 Take Attendance</a>
-            <a href="add_student_db.php" class="nav-link">➕ Add Student (DB)</a>
-            <a href="list_students.php" class="nav-link">📋 List Students</a>
-            <a href="index.html" class="nav-link">🚀 Main System</a>
-        </div>
-    </div>
+   <header>
+    <h1>Attendance System</h1>
+    <nav>
+        <a href="index.html">Home</a>        
+        <a href="add_student_db.php">Add Student (db)</a>     
+        <a href="add_student.php">Add Student (jk)</a>        
+        <a href="list_students.php">List Students</a>
+        <a href="take_attendance.php">Take Attendance</a>
+        <a href="create_session.php">Create Session</a>
+        <a href="close_session.php">Close Session</a>
+        <a href="test_connection.php">Database Connection</a>
+    </nav>
+</header>
 
     <div class="container">
         <h1>Update Student</h1>
